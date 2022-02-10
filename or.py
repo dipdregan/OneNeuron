@@ -4,9 +4,15 @@ import pandas as pd
 import numpy as np
 import joblib
 import logging
+import os
 
 logging_str = "[%(asctime)s:%(module)s:%(levelname)s:%(lineno)s] %(message)s"
-logging.basicConfig(level=logging.INFO, format=logging_str)
+
+
+log_dir = 'logs'
+os.makedirs(log_dir, exist_ok= True)
+
+logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'),level=logging.INFO, format=logging_str)
 
 def main(data,eta, epochs,filename,plotfilename):
 
