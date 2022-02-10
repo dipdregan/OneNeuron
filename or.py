@@ -12,7 +12,8 @@ logging_str = "[%(asctime)s:%(module)s:%(levelname)s:%(lineno)s] %(message)s"
 log_dir = 'logs'
 os.makedirs(log_dir, exist_ok= True)
 
-logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'),level=logging.INFO, format=logging_str)
+logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'),level=logging.INFO, format=logging_str,
+filemode='a')
 
 def main(data,eta, epochs,filename,plotfilename):
 
@@ -37,10 +38,11 @@ if __name__ =="__main__":
         "y" : [0,1,1,1]
     }
     ETA = 0.3
-    EPOCHS = 10
+    EPOCHS = 1000
     try:
-        logging.info(">>>>> starting traing >>>>>")
+        logging.info("\n>>>>> starting traing >>>>>")
         main(data=OR, eta=ETA,epochs=EPOCHS,filename='or.model',plotfilename='or.png')
         logging.info("<<<<< stoping the traing >>>>>")
     except Exception as e:
         logging.exception(e)
+        raise e

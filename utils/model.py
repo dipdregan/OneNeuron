@@ -4,6 +4,7 @@ import pandas as pd
 import joblib # FOR SAVING MY MODEL AS A BINARY FILE
 from matplotlib.colors import ListedColormap
 import logging
+from tqdm import tqdm
 
 plt.style.use("fivethirtyeight") # THIS IS STYLE OF GRAPHS
 
@@ -26,7 +27,7 @@ class Perceptron:
     X_with_bias = np.c_[self.X, -np.ones((len(self.X), 1))] # CONCATINATION
     logging.info(f"X with bias: \n{X_with_bias}")
 
-    for epoch in range(self.epochs):
+    for epoch in tqdm(range(self.epochs),total=self.epochs,desc='traing the model'):
       logging.info("--"*10)
       logging.info(f"for epoch: {epoch}")
       logging.info("--"*10)
