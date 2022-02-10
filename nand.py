@@ -23,8 +23,8 @@ def main():
 
     _= model.total_loss()
 
-    save_model(model=model,filename='NAND.model')
+    save_model(model=model,filename='NANd.model')
     save_plot(df,'NAND.png',model )
 
-if __name__=="__main":
+if __name__=="__main__":
     main()

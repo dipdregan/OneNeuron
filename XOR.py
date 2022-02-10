@@ -25,5 +25,5 @@ def main():
     save_model(model=model,filename='XOR.model')
     save_plot(df,'XOR.png',model )
 
-if __name__=="__main":
+if __name__=="__main__":
     main()

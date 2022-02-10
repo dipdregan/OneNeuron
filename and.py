@@ -21,7 +21,7 @@ def main(data,eta,epochs,filename,plotfilename):
     save_model(model=model,filename=filename)
     save_plot(df, file_name=plotfilename,model=model)
 
-if __name__=="__main":
+if __name__=="__main__":
 
     AND ={
             "x1" : [0,0,1,1],
@@ -31,4 +31,4 @@ if __name__=="__main":
     ETA = 0.3
     EPOCHS = 10
 
-    main(data=AND, eta=ETA,epochs=EPOCHS,filename='and.model',plotfilename='and.png')
+    main(data=AND, eta=ETA,epochs=EPOCHS,filename='and.model',plotfilename='And.png')

@@ -26,5 +26,5 @@ def main():
     save_model(model=model,filename='NOR.model')
     save_plot(df,'NOR.png',model )
 
-if __name__=="__main":
+if __name__=="__main__":
     main()
